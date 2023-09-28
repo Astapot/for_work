@@ -1,0 +1,68 @@
+# создание пользователя
+
+POST http://localhost:8000/api/users/
+Content-Type: application/json
+
+{
+  "login": "third"
+}
+
+
+###
+
+# создание продукта
+POST http://localhost:8000/api/products/
+Content-Type: application/json
+
+{
+  "product": "java",
+  "userown": [
+    {
+      "user": 1
+    },
+    {
+      "user": 1
+    }
+  ]
+}
+
+
+###
+
+
+# создание урока
+POST http://localhost:8000/api/lessons/
+Content-Type: application/json
+
+{
+  "title": "2les",
+  "video_url": "https://yandex.ru/images/search?from=tabbar&img_url=https%3A%2F%2Fimg.goodfon.ru%2Foriginal%2F3694x2463%2F6%2F9a%2Fevropeyskaya-koshka-dikiy-kot.jpg&lr=193&pos=2&rpt=simage&text=%D0%BA%D0%BE%D1%82",
+  "duration": 150,
+  "users": [
+    {
+      "user": 1,
+      "viewed_time": 100
+    },
+    {
+      "user": 2,
+      "viewed_time": 130
+    }
+  ],
+  "prods": [
+    {
+      "product": 3
+    },
+    {
+      "product": 1
+    }
+  ]
+}
+
+###
+
+# получение пользователя
+GET http://localhost:8000/api/users/
+
+###
+
+GET http://localhost:8000/api/get_info_user/1/
